@@ -1,5 +1,16 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./components/Login";
+
 function App() {
-	return <h1 className="text-4xl px-4 py-2">Tailwind Setup 🚀</h1>;
+	return (
+		<>
+			<BrowserRouter>
+				<Routes>
+					<Route exact path="/" element={<Login />} />
+				</Routes>
+			</BrowserRouter>
+		</>
+	);
 }
 
 export default App;
