@@ -5,3 +5,7 @@
 body {
   background-color: #eef3f8;
 }
+
+.profile:hover #signout {
+  display: block;
+}

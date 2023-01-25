@@ -62,10 +62,7 @@ export default function Header() {
 							<span className="text-sm lg:text-base">Notification</span>
 						</a>
 					</div>
-					<a
-						className="justify-self-end col-span-1 lg:justify-self-center"
-						href="/home"
-					>
+					<a className="profile justify-self-end col-span-1 lg:justify-self-center">
 						<img
 							className="min-w-[40px] inline rounded-full"
 							src="/images/user.svg"
@@ -78,6 +75,13 @@ export default function Header() {
 								src="/images/down-icon.svg"
 								alt=""
 							/>
+							<a
+								id="signout"
+								href="/signout"
+								className="hidden absolute right-2 lg:right-12 px-2 py-1 text-red-500 bg-white border-2 border-gray-300 border-solid"
+							>
+								Sign Out
+							</a>
 						</div>
 					</a>
 				</div>
