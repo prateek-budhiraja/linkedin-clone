@@ -78,7 +78,7 @@ export default function Header() {
 							<a
 								id="signout"
 								href="/signout"
-								className="hidden absolute right-2 lg:right-12 px-2 py-1 text-red-500 bg-white border-2 border-gray-300 border-solid"
+								className="hidden rounded-lg absolute right-2 lg:right-12 px-2 lg:px-3 py-1 lg:py-2 text-red-500 bg-white border-[1px] border-gray-300 border-solid"
 							>
 								Sign Out
 							</a>
