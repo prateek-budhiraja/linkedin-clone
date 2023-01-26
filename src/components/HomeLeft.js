@@ -30,7 +30,7 @@ export default function HomeLeft() {
 					<h2 className="font-semibold">My Items</h2>
 				</div>
 			</div>
-			<div className="mt-5 px-3 py-2 border-2 rounded-xl border-gray-500 bg-white">
+			<div className="hidden lg:block mt-5 px-3 py-2 border-2 rounded-xl border-gray-500 bg-white">
 				<h2 className="font-semibold">Groups</h2>
 				<div className="flex justify-between">
 					<h2 className="font-semibold">Events</h2>
