@@ -28,7 +28,7 @@ export default function Header() {
 							placeholder="Search"
 						/>
 					</span>
-					<div className="border-t-2 lg:border-0 border-solid bg-white border-gray-200 lg:static col-span-5 flex w-[100%] justify-evenly bottom-0 left-0 fixed px-1 py-2">
+					<div className="border-t-2 lg:border-0 border-solid bg-white border-gray-200 lg:static col-span-5 flex w-[100%] justify-evenly bottom-0 left-0 fixed px-1 py-2 z-50">
 						<a href="/home">
 							<img className="mx-auto" src="/images/nav-home.svg" alt="home" />
 							<span className="text-sm lg:text-base">Home</span>
