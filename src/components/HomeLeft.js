@@ -3,7 +3,7 @@ import React from "react";
 export default function HomeLeft() {
 	return (
 		<>
-			<div className="relative text-center border-2 rounded-xl border-gray-500">
+			<div className="relative text-center border-2 rounded-xl border-gray-500 bg-white">
 				<img className="rounded-t-xl" src="/images/card-bg.svg" alt="" />
 				<div className="-mt-8 bg-white inline-block rounded-full p-2 border-2 border-solid">
 					<img className="mx-auto" src="/images/photo.svg" alt="" />
@@ -30,7 +30,7 @@ export default function HomeLeft() {
 					<h2 className="font-semibold">My Items</h2>
 				</div>
 			</div>
-			<div className="mt-5 px-3 py-2 border-2 rounded-xl border-gray-500">
+			<div className="mt-5 px-3 py-2 border-2 rounded-xl border-gray-500 bg-white">
 				<h2 className="font-semibold">Groups</h2>
 				<div className="flex justify-between">
 					<h2 className="font-semibold">Events</h2>
