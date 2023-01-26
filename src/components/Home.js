@@ -16,7 +16,7 @@ export default function Home() {
 					moving!
 				</span>
 			</h1>
-			<div className="lg:grid px-4 flex flex-col gap-4 grid-cols-4 my-4 lg:my-[60px]">
+			<div className="lg:grid px-4 flex flex-col gap-4 grid-cols-4 my-4 lg:my-[40px]">
 				<div className="col-span-1">
 					<HomeLeft />
 				</div>
