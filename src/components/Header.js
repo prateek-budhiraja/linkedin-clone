@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import authContext from "../services/auth";
+import { signOut } from "firebase/auth";
+import { auth } from "../services/firebase";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+	const { user } = useContext(authContext);
+	const navigate = useNavigate();
+
+	const handleSignOut = () => {
+		signOut(auth);
+		navigate("/");
+	};
+
 	return (
 		<>
 			<nav className="px-3 lg:px-5 py-1 lg:py-3 bg-white border-b-2 border-solid">
@@ -64,8 +76,8 @@ export default function Header() {
 					</div>
 					<a className="profile justify-self-end col-span-1 lg:justify-self-center">
 						<img
-							className="min-w-[40px] inline rounded-full"
-							src="/images/user.svg"
+							className="max-w-[40px] inline rounded-full"
+							src={user?.reloadUserInfo.photoUrl}
 							alt="user logo"
 						/>
 						<div className="text-sm mt-1 mx-auto">
@@ -76,8 +88,8 @@ export default function Header() {
 								alt=""
 							/>
 							<a
+								onClick={handleSignOut}
 								id="signout"
-								href="/signout"
 								className="hidden rounded-lg absolute right-2 lg:right-12 px-2 lg:px-3 py-1 lg:py-2 text-red-500 bg-white border-[1px] border-gray-300 border-solid"
 							>
 								Sign Out

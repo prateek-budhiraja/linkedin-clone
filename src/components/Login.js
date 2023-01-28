@@ -1,6 +1,28 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../services/firebase";
+import { useNavigate } from "react-router-dom";
+import authContext from "../services/auth";
 
 export default function Login() {
+	const navigate = useNavigate();
+	const { setUser } = useContext(authContext);
+	const provider = new GoogleAuthProvider();
+	function handleClick() {
+		signInWithPopup(auth, provider)
+			.then((result) => {
+				const user = result.user;
+				setUser(user);
+				navigate("/home");
+			})
+			.catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+				console.log("Error: ", errorMessage, " Code: ", errorCode);
+			});
+	}
+
 	return (
 		<div className="overflow-x-hidden">
 			<nav className="flex py-3 px-5 items-center justify-between md:p-5 lg:p-8">
@@ -36,7 +58,10 @@ export default function Login() {
 					<h1 className="text-center lg:text-left text-primaryBlue text-2xl mb-5 md:text-5xl lg:text-6xl">
 						Welcome to your professional community
 					</h1>
-					<button className="block hover:bg-black text-gray-700 hover:text-white mx-auto items-center my-5 py-2 px-5 border-solid border-2 border-black rounded-full md:mt-[40px] lg:mt-[60px] lg:mx-0">
+					<button
+						onClick={handleClick}
+						className="block hover:bg-black text-gray-700 hover:text-white mx-auto items-center my-5 py-2 px-5 border-solid border-2 border-black rounded-full md:mt-[40px] lg:mt-[60px] lg:mx-0"
+					>
 						<img
 							className="inline-block mr-2 w-[25px] md:mb-[4px] md:w-[28px] lg:w-[30px]"
 							src="/images/google-g.png"
