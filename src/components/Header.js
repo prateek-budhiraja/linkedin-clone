@@ -4,8 +4,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../services/firebase";
 import { useNavigate } from "react-router-dom";
 
-export default function Header() {
-	const { user } = useContext(authContext);
+export default function Header({ userPhoto }) {
 	const navigate = useNavigate();
 
 	const handleSignOut = () => {
@@ -77,7 +76,7 @@ export default function Header() {
 					<a className="profile justify-self-end col-span-1 lg:justify-self-center">
 						<img
 							className="max-w-[40px] inline rounded-full"
-							src={user?.reloadUserInfo.photoUrl}
+							src={userPhoto}
 							alt="user logo"
 						/>
 						<div className="text-sm mt-1 mx-auto">

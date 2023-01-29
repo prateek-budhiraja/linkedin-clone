@@ -1,16 +1,12 @@
 import React from "react";
 import Post from "./Post";
 
-export default function HomeHero() {
+export default function HomeHero({ userPhoto }) {
 	return (
 		<>
 			<div className="py-4 lg:py-6 px-3 lg:px-8 border-2 border-solid rounded-xl border-gray-500 bg-white mb-4">
 				<div className="flex gap-3 lg:gap-5 items-center">
-					<img
-						className="rounded-full w-[40px]"
-						src="/images/user.svg"
-						alt=""
-					/>
+					<img className="rounded-full w-[40px]" src={userPhoto} alt="" />
 					<input
 						type="text"
 						className="w-[100%] border-[1px] border-black border-solid rounded-full py-1 px-3 font-semibold"

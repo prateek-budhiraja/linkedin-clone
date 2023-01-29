@@ -18,7 +18,7 @@ export default function Home() {
 
 	return (
 		<>
-			<Header />
+			<Header userPhoto={user?.reloadUserInfo.photoUrl} />
 			<div className="mt-4">
 				<h1 className="text-center text-base lg:text-2xl font-semibold px-3">
 					<a href="/login" className="text-primaryBlue underline">
@@ -32,10 +32,10 @@ export default function Home() {
 				</h1>
 				<div className="lg:grid px-4 flex flex-col gap-4 grid-cols-4 my-4 lg:my-[40px]">
 					<div className="col-span-1">
-						<HomeLeft />
+						<HomeLeft userName={user?.reloadUserInfo.displayName} />
 					</div>
 					<div className="col-span-2">
-						<HomeHero />
+						<HomeHero userPhoto={user?.reloadUserInfo.photoUrl} />
 					</div>
 					<div className="col-span-1">
 						<HomeRight />

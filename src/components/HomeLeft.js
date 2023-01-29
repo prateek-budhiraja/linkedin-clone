@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function HomeLeft() {
+export default function HomeLeft({ userName }) {
 	return (
 		<>
 			<div className="relative text-center border-2 rounded-xl border-gray-500 bg-white">
@@ -8,7 +8,7 @@ export default function HomeLeft() {
 				<div className="-mt-8 bg-white inline-block rounded-full p-2 border-2 border-solid">
 					<img className="mx-auto" src="/images/photo.svg" alt="" />
 				</div>
-				<h2 className="font-bold text-xl">Welcome, there!</h2>
+				<h2 className="font-bold text-xl">Welcome, {userName}!</h2>
 				<a className="text-primaryBlue text-sm font-semibold" href="#">
 					Add a photo
 				</a>
