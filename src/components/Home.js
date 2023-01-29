@@ -7,7 +7,7 @@ import authContext from "../services/auth";
 import Header from "./Header";
 
 export default function Home() {
-	const { user } = useContext(authContext);
+	const { user, setUser } = useContext(authContext);
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -18,7 +18,7 @@ export default function Home() {
 
 	return (
 		<>
-			<Header userPhoto={user?.reloadUserInfo.photoUrl} />
+			<Header setUser={setUser} userPhoto={user?.reloadUserInfo.photoUrl} />
 			<div className="mt-4">
 				<h1 className="text-center text-base lg:text-2xl font-semibold px-3">
 					<a href="/login" className="text-primaryBlue underline">

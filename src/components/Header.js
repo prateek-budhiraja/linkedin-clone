@@ -4,11 +4,12 @@ import { signOut } from "firebase/auth";
 import { auth } from "../services/firebase";
 import { useNavigate } from "react-router-dom";
 
-export default function Header({ userPhoto }) {
+export default function Header({ userPhoto, setUser }) {
 	const navigate = useNavigate();
 
 	const handleSignOut = () => {
 		signOut(auth);
+		setUser(null);
 		navigate("/");
 	};
 

@@ -7,7 +7,7 @@ import authContext from "../services/auth";
 
 export default function Login() {
 	const navigate = useNavigate();
-	const { setUser } = useContext(authContext);
+	const { user, setUser } = useContext(authContext);
 	const provider = new GoogleAuthProvider();
 	function handleClick() {
 		signInWithPopup(auth, provider)
@@ -22,6 +22,13 @@ export default function Login() {
 				console.log("Error: ", errorMessage, " Code: ", errorCode);
 			});
 	}
+
+	useEffect(() => {
+		console.log(user);
+		if (user != null) {
+			navigate("/home");
+		}
+	}, []);
 
 	return (
 		<div className="overflow-x-hidden">
